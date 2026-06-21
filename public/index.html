@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Internet Memory Bank</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>
+            Internet Memory Bank
+        </h1>
+
+        <p class="tagline">
+            Search through PDFs, screenshots and notes instantly.
+        </p>
+
+        <!-- Statistics Dashboard -->
+
+        <div class="stats-container">
+
+            <div class="stat-card">
+                <h2 id="docCount">0</h2>
+                <p>Documents</p>
+            </div>
+
+            <div class="stat-card">
+                <h2 id="pdfCount">0</h2>
+                <p>PDFs</p>
+            </div>
+
+            <div class="stat-card">
+                <h2 id="imageCount">0</h2>
+                <p>Images</p>
+            </div>
+
+        </div>
+
+        <!-- Search -->
+
+        <div class="search-container">
+
+            <span class="search-icon">
+                🔍
+            </span>
+
+            <input
+                type="text"
+                id="searchBox"
+                placeholder="Search your memories..."
+            >
+
+        </div>
+
+        <!-- Suggestions -->
+
+        <div id="suggestions"></div>
+
+        <!-- Search Results -->
+
+        <div id="results"></div>
+
+        <!-- Knowledge Graph -->
+
+        <h2 class="section-title">
+            Knowledge Graph
+        </h2>
+
+        <div id="graph"></div>
+
+        <h2>Memory Timeline</h2>
+
+<div id="timeline"></div>
+         
+        <button onclick="loadReplay()">
+    📖 What Did I Learn This Week?
+</button>
+
+<div id="replayContainer"></div>
+
+        <!-- Upload Section -->
+
+        <div id="dropZone">
+
+    <h3>📂 Drag & Drop Files Here</h3>
+
+    <p>or choose manually</p>
+
+    <input type="file" id="fileInput">
+
+    <br><br>
+
+    <button onclick="uploadFile()">
+        Upload
+    </button>
+
+</div>
+
+    <!-- Vis Network Library -->
+
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
+    <!-- Your JS -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

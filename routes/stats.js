@@ -1,0 +1,42 @@
+const express = require("express");
+const Document = require("../models/Document");
+
+const router = express.Router();
+
+router.get("/", async function(req,res){
+
+    try{
+
+        const docs = await Document.find();
+
+        let pdfs = 0;
+        let images = 0;
+
+        docs.forEach(doc => {
+
+            const name =
+            doc.filename.toLowerCase();
+
+            if(name.endsWith(".pdf"))
+                pdfs++;
+
+            else
+                images++;
+        });
+
+        res.json({
+            totalDocuments: docs.length,
+            totalPDFs: pdfs,
+            totalImages: images
+        });
+
+    }
+    catch(error){
+
+        res.status(500).json({
+            error:error.message
+        });
+    }
+});
+
+module.exports = router;
